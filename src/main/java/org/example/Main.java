@@ -2,6 +2,7 @@ package org.example;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
@@ -32,5 +33,15 @@ public class Main {
         long months = ChronoUnit.MONTHS.between(ldt1, ldt2);
         System.out.println("Days between: " + days);
         System.out.println("Months betweeen: " +months);
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.now();
+        DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd.MM.yyyy hh:mm.ss ZZZZ");
+        System.out.println(formatTime.format(zonedDateTime));
+
+        LocalDateTime localDateTime1 = LocalDateTime.now();
+        DateTimeFormatter formatTimeLocal = DateTimeFormatter.ofPattern("dd.MM.yy hh:mm");
+        System.out.println(formatTimeLocal.format(localDateTime1));
+
+        ZonedDa
     }
 }
