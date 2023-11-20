@@ -42,6 +42,11 @@ public class Main {
         DateTimeFormatter formatTimeLocal = DateTimeFormatter.ofPattern("dd.MM.yy hh:mm");
         System.out.println(formatTimeLocal.format(localDateTime1));
 
-        ZonedDa
+        Animal animal1 = new Animal(futureDate, "Schnuffi");
+        LocalDate nextBirthday = animal1.getBirthday().plusYears(1);
+        long daysToBirthday = ChronoUnit.DAYS.between(LocalDate.now(), nextBirthday);
+
+        System.out.println("Next birthday: "+ daysToBirthday);
+
     }
 }
